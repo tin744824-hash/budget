@@ -1,0 +1,13 @@
+.text-dots {
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    background-image: radial-gradient(circle, var(--primary-foreground) 36%, transparent 42%);
+    background-size: 6px 6px;      /* distance between dots */
+    -webkit-background-clip: text; /* cut the dots to the letter shapes */
+    background-clip: text;
+    color: transparent;            /* hide the normal text colour */
+    transform: translate(9px, 7px);/* the off-register offset */
+    opacity: 75%;
+}

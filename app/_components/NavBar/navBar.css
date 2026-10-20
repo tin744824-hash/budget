@@ -1,0 +1,27 @@
+.navBar {
+    border-bottom: 1px solid var(--border);
+    z-index: 5;
+    /* position: fixed; */
+    top: 0;
+}
+
+.navBar .navLinks .navLink {
+    transition: color 0.2s ease;
+}
+
+.navBar .navLinks .navLink:hover {
+    color: var(--color-blue-400);
+}
+
+.navBar .navLinks .navLink.active {
+    color: var(--color-blue-500);
+}
+
+.navBar .navLinks .navLine {
+    background: var(--color-orange-300);
+    width: 100%;
+    border-radius: var(--radius);
+    height: 1.5px;
+    position: absolute;
+    bottom: -2px;
+}

@@ -1,0 +1,17 @@
+.ledgerPage::after {
+    content: '';
+    display: block;
+    height: 100vh;
+    width: 100vw;
+    background: #659b50;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    transform: scaleY(100%);
+    transition: transform 0.5s cubic-bezier(0.79,0.14,0.15,0.86);;
+    transform-origin: 100% 0%;
+}
+
+.ledgerPage.transitionOff::after {
+    transform: scaleY(0%);
+}

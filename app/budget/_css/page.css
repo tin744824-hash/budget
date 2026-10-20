@@ -1,0 +1,138 @@
+.figures {
+    /* z-index: -1; */
+}
+
+.sunSvg {
+    anchor-name: --sun-anchor;
+}
+
+.sunGridLine {
+    /* position-anchor: --sun-anchor; */
+    /* position-area: top; */
+    /* top: calc(anchor(bottom)); */
+    align-self: anchor-center;
+}
+
+.sunSvg .top-mark {
+    stroke: var(--color-foreground);
+    stroke-width: 1;
+    stroke-dasharray: 2 5;
+}
+
+.sunSvg .ray {
+    stroke: #f77f00;
+    stroke-width: 3.4;
+    stroke-linecap: round;
+}
+
+.sunSvg .disc {
+    fill: #fcbf49;
+}
+
+.sunSvg .smile {
+    fill: none;
+    stroke: var(--color-foreground);
+    stroke-width: 2.6;
+    stroke-linecap: round;
+}
+
+.grain-ink {
+    filter: url(#grain);
+}
+
+.figures {
+    /* background: linear-gradient(
+  0deg,
+  #F2CC8F 0%,
+  #F4D6A3 35%,
+  #F7E3BD 70%,
+  #FFF1D6 100%
+); */
+}
+
+.landscapeMove:after {
+    content: '';
+    display: block;
+    height: 50vh;
+    width: 100vw;
+    background: #659b50;
+    z-index: 10;
+    position: absolute;
+    bottom: -50vh;
+    transition: transform 1s cubic-bezier(0.79,0.14,0.15,0.86);;
+    transform-origin: 100% 0%;
+    transform: scaleY(100%)
+}
+
+.landscapeMove.done:after{
+    transform: scaleY(0%);
+}
+
+.landscapeBox .far-hill {
+    fill: #bbddb2;
+}
+
+.landscapeBox .middle-hill {
+    fill: #92c07c;
+}
+
+.landscapeBox .front-hill {
+    fill: #659b50;
+}
+
+.landscapeBox .trunk {
+    fill: #4b2f15;
+}
+
+.landscapeBox .canopy {
+    fill: #3a7d44;
+}
+
+.landscapeBox .canopyLight {
+    fill: #a8ddaa;
+}
+
+.landscapeBox .fireflies {
+    fill: #fee5b6;
+}
+
+.landscapeBox .grass {
+    fill: none;
+    stroke: #111f0e;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+}
+
+.line {
+    background-image: linear-gradient(to right, color-mix(in oklab, var(--color-foreground) 50%, transparent 50%) 0px 10px, transparent 10px 20px);
+    background-size: 20px 100%; /* Must match the total sequence length (10px + 10px) */
+    background-repeat: repeat-x;
+    /* opacity: 0.5; */
+    z-index: -1;
+}
+
+.gridLine .budgetSet {
+    background: radial-gradient(circle, var(--background) 55%, transparent 100%);
+    z-index: 1;
+}
+
+.gridLine .budgetSet > span {
+    background-color: var(--background);
+}
+
+.texts .headline {
+    background: radial-gradient(circle, var(--background) 70%, transparent 100%);
+    /* background-color: linear-gradient(var(--background)); */
+    opacity: 1;
+    z-index: 1;
+}
+
+.landscapeBox {
+    pointer-events: none;
+}
+
+.texts, .landscapeBox {
+    z-index: 2;
+}
+
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Margin: "Unallocated" coin jar, empty (0% full), Ember palette.
+     To show a fill level, set the orange rect's y to 86 - 56 * level (0 to 1) and its height to 90 - y. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-label="Unallocated jar">
+  <defs>
+    <!-- riso speckle, same as in the app -->
+    <filter id="riso-grain" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="4" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -4.2 3.55" result="holes"/>
+      <feComposite in="SourceGraphic" in2="holes" operator="in"/>
+    </filter>
+    <clipPath id="jar">
+      <path d="M24 30h48v48c0 5-4 8-8 8H32c-4 0-8-3-8-8z"/>
+    </clipPath>
+  </defs>
+  <!-- shifted up so the jar (lid to base) sits in the middle of the 96x96 box -->
+  <g transform="translate(0 -4.75)">
+  <g filter="url(#riso-grain)">
+    <!-- fill, printed slightly off-register like the second riso drum -->
+    <g clip-path="url(#jar)" transform="translate(1.8 1.3)" style="mix-blend-mode:multiply">
+      <rect x="20" y="86" width="56" height="4" fill="#f77f00"/>
+    </g>
+    <path d="M24 30h48v48c0 5-4 8-8 8H32c-4 0-8-3-8-8z" fill="none" stroke="#003049" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="21" y="18" width="54" height="11" rx="2" fill="#003049"/>
+    <path d="M30 40v30" stroke="#003049" stroke-width="2" stroke-linecap="round" opacity=".45"/>
+  </g>
+  </g>
+</svg>
