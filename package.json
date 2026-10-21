@@ -17,6 +17,7 @@
     "cn": "^0.3.0",
     "date-fns": "^4.4.0",
     "geist": "^1.7.2",
+    "isomorphic-dompurify": "^3.19.0",
     "lucide-react": "^1.45.0",
     "motion": "^14.0.0",
     "next": "16.3.5",

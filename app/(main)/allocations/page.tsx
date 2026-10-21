@@ -16,6 +16,8 @@ import jarSvg from '../../../public/svg/jar.svg'
 import "./_css/page.css"
 
 function LedgerPage() {
+    const handleEnvelopeRename = (e: string, id: string) => {}
+
     return (
         <div className="pb-4">
             <h1 className="font-bold text-4xl">Allocations</h1>
@@ -69,20 +71,20 @@ function LedgerPage() {
                 </Card>
             </div>
             <Card className="mt-10 p-0 rounded-sm w-full [&>:not(:last-child)]:border-b gap-0">
-                <div className="p-10 w-full md:gap-13 sm:gap-5 grid md:grid-cols-[2fr_8fr_2fr] md:grid-rows-1 sm:grid-rows-2 sm:grid-cols-2">
+                <div className="p-7 md:p-10 w-full md:gap-13 gap-5 grid md:grid-cols-[2fr_8fr_2fr] md:grid-rows-1 grid-rows-2 grid-cols-2">
                     <div className="flex items-center truncate">
-                        <h5 className="text-lg font-medium truncate">Rent</h5>
+                        <h5 contentEditable onInput={(e) => handleEnvelopeRename(e.currentTarget.innerHTML, "initialRent")} onBlur={(e) => e.currentTarget.scrollLeft = 0} className="w-full focus-visible:outline-hidden  focus-visible:border-b text-lg font-medium truncate" suppressContentEditableWarning>Rent</h5>
                     </div>
-                    <div className="flex flex-col sm:order-1 md:order-0 gap-2 w-full sm:col-span-full md:col-span-1">
+                    <div className="flex flex-col order-1 md:order-0 gap-2 w-full col-span-full md:col-span-1">
                         <Progress value={56} className="w-full"/>
                         <div className="flex justify-between">
-                            <span>$334 spent so far this month</span>
+                            <span><span className="font-[500]">$334</span> / $500 spent this month</span>
                             <span>56%</span>
                         </div>
                     </div>
                     <div className="flex flex-row gap-3">
-                        <InputGroup className="border-0 border-b-1 rounded-none rounded-t-sm shadow-none min-w-40">
-                            <InputGroupInput className="font-medium border-0" placeholder={"0"} autoComplete="off"></InputGroupInput>
+                        <InputGroup className="border-0 border-b-1 rounded-none rounded-t-sm shadow-none md:min-w-30">
+                            <InputGroupInput className="font-medium border-0" type="number" inputMode="numeric" pattern="[0-9]*" placeholder={"0"} autoComplete="off"></InputGroupInput>
                             <InputGroupAddon align="inline-start">$</InputGroupAddon>
                             <InputGroupAddon align="inline-end">SGD</InputGroupAddon>
                         </InputGroup>
@@ -93,7 +95,7 @@ function LedgerPage() {
                 </div>
                 <div className="justify-start p-10 w-full md:gap-13 sm:gap-5 grid md:grid-cols-[2fr_8fr_2fr] md:grid-rows-1 sm:grid-rows-2 sm:grid-cols-2">
                     <div className="flex items-center truncate">
-                        <h5 className="text-lg font-medium truncate">Utilities asdfasfasfsafsasdfasdfsdfasdfsadfsdfasdfsadf</h5>
+                        <h5 contentEditable className="text-lg font-medium truncate">Utilities asdfasfasfsafsasdfasdfsdfasdfsadfsdfasdfsadf</h5>
                     </div>
                     <div className="flex flex-col sm:order-1 md:order-0 gap-2 w-full sm:col-span-full md:col-span-1">
                         <Progress value={56} className="w-full"/>
@@ -103,7 +105,7 @@ function LedgerPage() {
                         </div>
                     </div>
                     <div className="flex flex-row gap-3">
-                        <InputGroup className="border-0 border-b-1 rounded-none rounded-t-sm shadow-none min-w-40">
+                        <InputGroup className="border-0 border-b-1 rounded-none rounded-t-sm shadow-none md:min-w-30">
                             <InputGroupInput className="font-medium border-0" placeholder={"0"} autoComplete="off"></InputGroupInput>
                             <InputGroupAddon align="inline-start">$</InputGroupAddon>
                             <InputGroupAddon align="inline-end">SGD</InputGroupAddon>
